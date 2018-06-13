@@ -1,0 +1,4 @@
+#
+# $FreeBSD: release/10.4.0/contrib/openbsm/etc/audit_user 293161 2016-01-04 16:32:21Z brueffer $
+#
+root:lo:no

@@ -1,0 +1,4 @@
+# $FreeBSD: release/10.4.0/bin/sh/tests/errors/bad-parm-exp7.0 287749 2015-09-13 13:31:51Z jilles $
+
+v=1
+eval ": $(printf '${v-${\372}}')"

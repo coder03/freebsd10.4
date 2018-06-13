@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $FreeBSD: release/10.4.0/etc/autofs/special_hosts 308292 2016-11-04 14:06:21Z trasz $
+#
+
+if [ $# -eq 0 ]; then
+	out=`getent hosts`
+	[ $? -eq 0 ] || exit 1
+	echo "$out" | awk '{ print $2 }' | sort -u
+	exit 0
+fi
+
+out=`showmount -E "$1"`
+[ $? -eq 0 ] || exit 1
+echo "$out" | awk -v host="$1" \
+    '{ printf "\"%s\"\t\"%s:%s\" ", $0, host, $0 } END { printf "\n" }'
+

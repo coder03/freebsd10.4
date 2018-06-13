@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $FreeBSD: release/10.4.0/etc/rc.d/SERVERS 299648 2016-05-13 09:46:23Z ngie $
+#
+
+# PROVIDE: SERVERS
+# REQUIRE: mountcritremote abi ldconfig savecore watchdogd
+
+#	This is a dummy dependency, for early-start servers relying on
+#	some basic configuration.
